@@ -107,7 +107,7 @@ MonoBehaviour:
   camera: {fileID: 5080963148425877421}
   speed: 2
   groundCheckTransform: {fileID: 2205640496651414677}
-  sphereRadius: 0.08
+  sphereRadius: 0.05
   jumpHeight: 1.5
   isGrounded: 0
 --- !u!143 &1301704281564166152
