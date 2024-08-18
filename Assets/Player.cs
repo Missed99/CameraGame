@@ -94,7 +94,7 @@ public class Player : MonoBehaviour
         camera.eulerAngles = new Vector3(y, x, 0);
 
         //相机的限制
-        cameraRestraint();
+        CameraRestraint();
     }
 
     //控制斜坡
@@ -152,7 +152,7 @@ public class Player : MonoBehaviour
     }
 
     //相机限制
-    private void cameraRestraint()
+    private void CameraRestraint()
     {
         //让相机z轴保持不变，防止相机倾斜
         if (camera.localEulerAngles.z != 0)
