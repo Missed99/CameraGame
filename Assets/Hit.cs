@@ -51,6 +51,10 @@ public class Hit: MonoBehaviour
             else
                 Player.instance.isRed--;
             Debug.Log(cube.name + "检测到了");
+
+            if (GetComponent<SphereMove>())//冻结和解冻
+                GetComponent<SphereMove>().isMove = !GetComponent<SphereMove>().isMove;
         }
+        
     }
 }
