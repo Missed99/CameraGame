@@ -1,8 +1,10 @@
+using DG.Tweening.Core.Easing;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 /*
   @Author:Rekite
  */
@@ -18,6 +20,8 @@ public class Player : MonoBehaviour
     float x, y;                  //相机旋转x，y轴控制
     float g = -9.8f;               //重力
     Vector3 playerrun;           //控制玩家运动的向量
+    public Image flash;  
+    public float flashDuration = 0.01f;
 
     //地面检测
     public Transform groundCheckTransform;//检测的点
@@ -31,15 +35,16 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        Objs = GameObject.FindGameObjectsWithTag("Ball");
+        Objs = GameObject.FindGameObjectsWithTag("Ball");//找到所有的ball
         instance = this;
         player = GetComponent<CharacterController>();//获取人物的角色控制器组件 
+        flash.color = new Color(1, 1, 1, 0); 
     }
 
     void Update()
     {
         //斜坡检测可视化
-        Debug.DrawRay(transform.position + player.height / 2 * Vector3.down, Vector3.down * player.height / 2 * slopeForceRayLength, Color.blue);
+        //Debug.DrawRay(transform.position + player.height / 2 * Vector3.down, Vector3.down * player.height / 2 * slopeForceRayLength, Color.blue);
 
         //地面检测
         isSlope = OnSlope();
@@ -48,7 +53,11 @@ public class Player : MonoBehaviour
         TakePhoto();
 
         //鼠标设置
-        MouseSetting();
+        if (GamePause.isPause == false)
+        {
+            MouseSetting();
+        }
+        //MouseSetting();
 
         //控制玩家运动
         float _horizontal = Input.GetAxis("Horizontal");
@@ -133,11 +142,13 @@ public class Player : MonoBehaviour
     //拍照
     private void TakePhoto()
     {
-        if (Input.GetMouseButtonDown(0))
+        //鼠标按下左键
+        if (Input.GetMouseButtonDown(0) && GamePause.isPause == false)
         {
             isRed = 0;
             PlaySound();
-            foreach (var item in Objs)
+            TriggerFlash();
+            foreach (var item in Objs)//遍历所有的球
             {
                 item.GetComponent<Hit>().Detect();
             }
@@ -191,5 +202,37 @@ public class Player : MonoBehaviour
                 return true;
         }
         return false;
+    }
+    public void TriggerFlash()
+    {
+        StartCoroutine(Flashing());
+    }
+    private IEnumerator Flashing()
+    {
+        // 逐渐显示
+        float elapsed = 0f;
+        while (elapsed < flashDuration)
+        {
+            elapsed += Time.deltaTime;
+            float alpha = Mathf.Clamp01(elapsed / (flashDuration / 2)); // 前半部分渐渐增加
+            flash.color = new Color(1, 1, 1, alpha);
+            yield return null;
+        }
+
+        // 瞬间透明
+        flash.color = new Color(1, 1, 1, 1);
+
+        // 逐渐消失
+        elapsed = 0f;
+        while (elapsed < flashDuration)
+        {
+            elapsed += Time.deltaTime;
+            float alpha = Mathf.Clamp01(1 - (elapsed / (flashDuration / 2))); // 后半部分渐渐减少
+            flash.color = new Color(1, 1, 1, alpha);
+            yield return null;
+        }
+
+        // 确保完全透明
+        flash.color = new Color(1, 1, 1, 0);
     }
 }
