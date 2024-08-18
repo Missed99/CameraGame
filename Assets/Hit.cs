@@ -42,7 +42,7 @@ public class Hit: MonoBehaviour
     public void Detect()
     {
         planes = GeometryUtility.CalculateFrustumPlanes(cam);
-        if (GeometryUtility.TestPlanesAABB(planes, objCollider.bounds))
+        if (GeometryUtility.TestPlanesAABB(planes, objCollider.bounds))//屏幕截面去寻找碰撞体（红球
         {
             if (isRed)
                 Player.instance.isRed++;
@@ -51,6 +51,10 @@ public class Hit: MonoBehaviour
             else
                 Player.instance.isRed--;
             Debug.Log(cube.name + "检测到了");
+
+            if (GetComponent<SphereMove>())//冻结和解冻
+                GetComponent<SphereMove>().isMove = !GetComponent<SphereMove>().isMove;
         }
+        
     }
 }
