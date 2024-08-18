@@ -43,6 +43,7 @@ public class Hit: MonoBehaviour
     {
         planes = GeometryUtility.CalculateFrustumPlanes(cam);
         if (GeometryUtility.TestPlanesAABB(planes, objCollider.bounds))
+        if (GeometryUtility.TestPlanesAABB(planes, objCollider.bounds))//��Ļ����ȥѰ����ײ�壨����
         {
             if (isRed)
                 Player.instance.isRed++;

@@ -17,7 +17,9 @@ public class Door : MonoBehaviour
     {
         if (Player.instance.isRed > 0)
             transform.DOMoveZ(-6, 1);
+            transform.DOMoveZ(-6, 1);//����
         else
             transform.DOMoveZ(-1.75f, 1);
+            transform.DOMoveZ(-1.75f, 1);//����
     }
 }
