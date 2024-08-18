@@ -33,12 +33,18 @@ public class Player : MonoBehaviour
     public bool isSlope;
     public float slopeForce = 6.0f;
 
-    void Start()
+    private void Awake()
     {
-        Objs = GameObject.FindGameObjectsWithTag("Ball");//找到所有的ball
         instance = this;
+        Objs = GameObject.FindGameObjectsWithTag("Ball");//找到所有的ball
         player = GetComponent<CharacterController>();//获取人物的角色控制器组件 
         flash.color = new Color(1, 1, 1, 0); 
+    }
+
+    void Start()
+    {
+        //让所有球添加悬浮脚本
+        BallAddFloatingScript(Objs);
     }
 
     void Update()
@@ -202,6 +208,15 @@ public class Player : MonoBehaviour
                 return true;
         }
         return false;
+    }
+
+    //给所有的Ball添加悬浮脚本
+    public void BallAddFloatingScript(GameObject[] Objs)
+    {
+        for(int i = 0; i < Objs.Length; i++)
+        {
+            Objs[i].gameObject.AddComponent<Floating>();
+        }
     }
     public void TriggerFlash()
     {
