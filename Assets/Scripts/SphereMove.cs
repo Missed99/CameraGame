@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SphereMove : MonoBehaviour
 {
+    public float moveSpeed=1f;
     public bool isMove;
     public Transform point;
     public Vector3 initPos;
@@ -19,7 +20,7 @@ public class SphereMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(targetPos, transform.position) < 0.1f)
+        if (Vector3.Distance(targetPos, transform.position) < 0.5f)
         {
             state = !state;
                 
@@ -34,6 +35,6 @@ public class SphereMove : MonoBehaviour
 
         }
         if(isMove)
-        transform.position += (targetPos - transform.position).normalized * Time.deltaTime;
+        transform.position += (targetPos - transform.position).normalized * Time.deltaTime* moveSpeed;
     }
 }

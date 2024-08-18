@@ -1,4 +1,5 @@
 using DG.Tweening.Core.Easing;
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -10,6 +11,7 @@ using UnityEngine.UI;
  */
 public class Player : MonoBehaviour
 {
+    public Vector3 initPos;//玩家起始位置
     public int isRed;
     public GameObject[] Objs;
     public static Player instance;
@@ -17,6 +19,7 @@ public class Player : MonoBehaviour
     CharacterController player;  //定义角色控制器组件
     public new Transform camera; //新建一个camera对象用于放入所要实现的第一人称相机
     public float speed = 2f;			 //角色移动速度
+    public int fastSpeedX;
     float x, y;                  //相机旋转x，y轴控制
     float g = -9.8f;               //重力
     Vector3 playerrun;           //控制玩家运动的向量
@@ -33,12 +36,20 @@ public class Player : MonoBehaviour
     public bool isSlope;
     public float slopeForce = 6.0f;
 
-    void Start()
+    private void Awake()
     {
-        Objs = GameObject.FindGameObjectsWithTag("Ball");//找到所有的ball
         instance = this;
+        Objs = GameObject.FindGameObjectsWithTag("Ball");//找到所有的ball
         player = GetComponent<CharacterController>();//获取人物的角色控制器组件 
         flash.color = new Color(1, 1, 1, 0); 
+    }
+
+    void Start()
+    {
+        //让所有球添加悬浮脚本
+        BallAddFloatingScript(Objs);
+
+        initPos=transform.position;//出生点
     }
 
     void Update()
@@ -57,6 +68,11 @@ public class Player : MonoBehaviour
         {
             MouseSetting();
         }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))//玩家快速移动
+            speed *= fastSpeedX;
+        else if(Input.GetKeyUp(KeyCode.LeftShift))
+            speed /= fastSpeedX;
         //MouseSetting();
 
         //控制玩家运动
@@ -92,6 +108,7 @@ public class Player : MonoBehaviour
         //重力
         playerrun.y += g * Time.deltaTime;
 
+        Physics.autoSyncTransforms = true;//用来解决CharacterController导致的Transform.Position赋值后不起作用
         //移动
         player.Move(player.transform.TransformDirection(playerrun * Time.deltaTime));
 
@@ -203,6 +220,15 @@ public class Player : MonoBehaviour
         }
         return false;
     }
+
+    //给所有的Ball添加悬浮脚本
+    public void BallAddFloatingScript(GameObject[] Objs)
+    {
+        for(int i = 0; i < Objs.Length; i++)
+        {
+            Objs[i].gameObject.AddComponent<Floating>();
+        }
+    }
     public void TriggerFlash()
     {
         StartCoroutine(Flashing());
@@ -234,5 +260,12 @@ public class Player : MonoBehaviour
 
         // 确保完全透明
         flash.color = new Color(1, 1, 1, 0);
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.GetComponent<SphereMove>())
+        {
+            transform.position = initPos;
+        }
     }
 }
