@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     public float sphereRadius;//检测半径
     public float jumpHeight;
     public bool isGrounded;
+    private bool isJump;
 
     void Start()
     {
@@ -51,7 +52,7 @@ public class Player : MonoBehaviour
         {
             playerrun = new Vector3(_horizontal, 0, _vertical) * speed;
         }
-
+        
         //跳跃
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
@@ -87,8 +88,9 @@ public class Player : MonoBehaviour
         Collider[] colliders = Physics.OverlapSphere(groundCheckTransform.position, sphereRadius);//检测范围内碰撞的物体
         foreach (Collider collider in colliders)
         {
-            if (collider.gameObject != gameObject)
+            if (collider.gameObject.CompareTag("Plane"))
             {
+                Debug.Log("检测到了地面");
                 return true;
             }
         }
