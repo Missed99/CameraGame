@@ -71,7 +71,7 @@ public class Player : MonoBehaviour
 
 
         Camera.main.fieldOfView += Input.GetAxis("Mouse ScrollWheel") * Time.deltaTime * 100 * 100f;
-        if (Camera.main.fieldOfView > 50)
+        if (Camera.main.fieldOfView > 50)//限制相机缩放角度
             Camera.main.fieldOfView = 50;
         if (Camera.main.fieldOfView < 30)
             Camera.main.fieldOfView = 30;
