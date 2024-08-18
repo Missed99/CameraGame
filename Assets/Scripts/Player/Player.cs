@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        Objs = GameObject.FindGameObjectsWithTag("Ball");
+        Objs = GameObject.FindGameObjectsWithTag("Ball");//找到所有的ball
         instance = this;
         player = GetComponent<CharacterController>();//获取人物的角色控制器组件 
     }
@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         //斜坡检测可视化
-        Debug.DrawRay(transform.position + player.height / 2 * Vector3.down, Vector3.down * player.height / 2 * slopeForceRayLength, Color.blue);
+        //Debug.DrawRay(transform.position + player.height / 2 * Vector3.down, Vector3.down * player.height / 2 * slopeForceRayLength, Color.blue);
 
         //地面检测
         isSlope = OnSlope();
@@ -133,11 +133,12 @@ public class Player : MonoBehaviour
     //拍照
     private void TakePhoto()
     {
+        //鼠标按下左键
         if (Input.GetMouseButtonDown(0))
         {
             isRed = 0;
             PlaySound();
-            foreach (var item in Objs)
+            foreach (var item in Objs)//遍历所有的球
             {
                 item.GetComponent<Hit>().Detect();
             }
