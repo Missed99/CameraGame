@@ -48,7 +48,11 @@ public class Player : MonoBehaviour
         TakePhoto();
 
         //鼠标设置
-        MouseSetting();
+        if (GamePause.isPause == false)
+        {
+            MouseSetting();
+        }
+        //MouseSetting();
 
         //控制玩家运动
         float _horizontal = Input.GetAxis("Horizontal");
@@ -134,7 +138,7 @@ public class Player : MonoBehaviour
     private void TakePhoto()
     {
         //鼠标按下左键
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && GamePause.isPause == false)
         {
             isRed = 0;
             PlaySound();
