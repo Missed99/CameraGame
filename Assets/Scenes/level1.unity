@@ -170,6 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRed: 0
+  isFloat: 0
 --- !u!135 &53681056
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -857,6 +858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRed: 0
+  isFloat: 0
 --- !u!135 &215602966
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1075,6 +1077,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRed: 0
+  isFloat: 1
 --- !u!135 &270333636
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1509,6 +1512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRed: 0
+  isFloat: 0
 --- !u!135 &389071289
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2016,6 +2020,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRed: 1
+  isFloat: 0
 --- !u!1 &599886489
 GameObject:
   m_ObjectHideFlags: 0
@@ -2703,6 +2708,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRed: 0
+  isFloat: 0
 --- !u!135 &882090933
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2929,6 +2935,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRed: 0
+  isFloat: 0
 --- !u!1 &909049635
 GameObject:
   m_ObjectHideFlags: 0
@@ -3258,6 +3265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRed: 0
+  isFloat: 0
 --- !u!1001 &1153569498
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3485,6 +3493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRed: 0
+  isFloat: 0
 --- !u!1 &1272738868
 GameObject:
   m_ObjectHideFlags: 0
@@ -3604,6 +3613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRed: 0
+  isFloat: 0
 --- !u!1 &1291056054
 GameObject:
   m_ObjectHideFlags: 0
@@ -3840,7 +3850,6 @@ GameObject:
   - component: {fileID: 1318327089}
   - component: {fileID: 1318327088}
   - component: {fileID: 1318327087}
-  - component: {fileID: 1318327091}
   m_Layer: 0
   m_Name: chabei (1)
   m_TagString: Ball
@@ -3876,6 +3885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRed: 0
+  isFloat: 0
 --- !u!135 &1318327088
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3947,22 +3957,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1318327085}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1318327091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1318327085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39f9784c7bce0d447a527520d6783d14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  floatingHeight: 0.25
-  curveType: 0
-  time: 5156.62
-  originalPosition: {x: 0, y: 0, z: 0}
 --- !u!1001 &1414034635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4191,6 +4185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRed: 0
+  isFloat: 0
 --- !u!135 &1668465584
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4836,6 +4831,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRed: 0
+  isFloat: 0
 --- !u!135 &1913800696
 SphereCollider:
   m_ObjectHideFlags: 0
