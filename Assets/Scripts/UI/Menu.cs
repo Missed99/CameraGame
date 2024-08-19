@@ -16,6 +16,14 @@ public class Menu : MonoBehaviour
     }
     private void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(eventSystem);
+    }
+    private void Update()
+    {
+        if (GamePause.isPause == false)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
 }
