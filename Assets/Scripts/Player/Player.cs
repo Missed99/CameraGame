@@ -277,6 +277,12 @@ public class Player : MonoBehaviour
         {
             transform.position = initPos;
         }
+
+        //进门
+        if(other.gameObject.tag == "NextLevel")
+        {
+            GameManager.Instance.LoadNextScene();//加载下一关
+        }
     }
 
     //给第三关的球添加运动脚本
