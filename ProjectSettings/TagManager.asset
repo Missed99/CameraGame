@@ -7,7 +7,7 @@ TagManager:
   - Ball
   - Plane
   - Level3_Ball
-  - Smoke
+  - Wall
   layers:
   - Default
   - TransparentFX
