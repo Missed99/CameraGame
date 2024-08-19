@@ -10,7 +10,9 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     public Vector3 initPos;//玩家起始位置
-    public int isRed;
+    public int redNum;
+    public int yNum;
+    public int pNum;
     public GameObject[] Objs;//Tag == Ball
     public GameObject[] Objs_Level3;//Tag == Level3_Ball
 
@@ -165,7 +167,9 @@ public class Player : MonoBehaviour
         //鼠标按下左键
         if (Input.GetMouseButtonDown(0) && GamePause.isPause == false)
         {
-            isRed = 0;
+            redNum = 0;
+            yNum = 0;
+            pNum =0;
             PlaySound();
             TriggerFlash();
             foreach (var item in Objs)//遍历所有的球
@@ -193,11 +197,11 @@ public class Player : MonoBehaviour
             camera.localEulerAngles = new Vector3(rotX, rotY, 0);
         }
 
-        Camera.main.fieldOfView += Input.GetAxis("Mouse ScrollWheel") * Time.deltaTime * 100 * 100f;
+        Camera.main.fieldOfView += Input.GetAxis("Mouse ScrollWheel") * Time.deltaTime * 100 * 80f;
         if (Camera.main.fieldOfView > 50)
             Camera.main.fieldOfView = 50;
-        if (Camera.main.fieldOfView < 30)
-            Camera.main.fieldOfView = 30;
+        if (Camera.main.fieldOfView < 20)
+            Camera.main.fieldOfView = 20;
     }
 
     ////地面检测调试

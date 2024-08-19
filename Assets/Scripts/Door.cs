@@ -6,6 +6,7 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     public int objNum;
+    public float num;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,9 +16,24 @@ public class Door : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Player.instance.isRed > objNum)
-            transform.DOMoveZ(-6, 1);//开门
-        else
-            transform.DOMoveZ(-1.75f, 1);//不动
+        if (num == 0 && Player.instance.redNum > objNum)
+        {
+                num += Time.deltaTime;
+                transform.position += transform.right * 2f ;
+        }
+            
+
+        if (num == 1 && Player.instance.yNum > objNum )
+        {
+            num += Time.deltaTime;
+            transform.position += transform.right * 2f;
+        }
+
+        if (num == 2 && Player.instance.pNum > objNum)
+        {
+            num += Time.deltaTime;
+            transform.position += transform.right * 2f ;
+        }
+
     }
 }
