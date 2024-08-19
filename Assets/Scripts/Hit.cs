@@ -5,6 +5,7 @@ using UnityEngine;
 public class Hit: MonoBehaviour
 {
     public bool isRed;
+    public bool isFloat;
     GameObject cube;
     Collider objCollider;
     Camera cam;

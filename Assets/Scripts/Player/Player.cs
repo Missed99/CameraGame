@@ -6,9 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-/*
-  @Author:Rekite
- */
+
 public class Player : MonoBehaviour
 {
     public Vector3 initPos;//玩家起始位置
@@ -230,7 +228,8 @@ public class Player : MonoBehaviour
     {
         for(int i = 0; i < Objs.Length; i++)
         {
-            Objs[i].gameObject.AddComponent<Floating>();
+            if(Objs[i].GetComponent<Hit>().isFloat)
+            Objs[i].AddComponent<Floating>();
         }
     }
     public void TriggerFlash()
@@ -267,7 +266,7 @@ public class Player : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.GetComponent<SphereMove>().isDead)
+        if(other.GetComponent<SphereMove>()&&other.GetComponent<SphereMove>().isDead)
         {
             transform.position = initPos;
         }
