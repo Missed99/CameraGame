@@ -13,7 +13,9 @@ public class Player : MonoBehaviour
 {
     public Vector3 initPos;//玩家起始位置
     public int isRed;
-    public GameObject[] Objs;
+    public GameObject[] Objs;//Tag == Ball
+    public GameObject[] Objs_Level3;//Tag == Level3_Ball
+
     public static Player instance;
     public AudioClip[] audioClips;
     CharacterController player;  //定义角色控制器组件
@@ -40,6 +42,7 @@ public class Player : MonoBehaviour
     {
         instance = this;
         Objs = GameObject.FindGameObjectsWithTag("Ball");//找到所有的ball
+        Objs_Level3 = GameObject.FindGameObjectsWithTag("Level3_Ball"); ;//找到第三关对应Tag的Ball
         player = GetComponent<CharacterController>();//获取人物的角色控制器组件 
         flash.color = new Color(1, 1, 1, 0); 
     }
@@ -49,7 +52,8 @@ public class Player : MonoBehaviour
         //让所有球添加悬浮脚本
         BallAddFloatingScript(Objs);
 
-        initPos=transform.position;//出生点
+        //让第三关对应Tag的球添加脚本
+        BallAddJumpAndChangeScaleScript(Objs_Level3);
     }
 
     void Update()
@@ -266,6 +270,15 @@ public class Player : MonoBehaviour
         if(other.GetComponent<SphereMove>())
         {
             transform.position = initPos;
+        }
+    }
+
+    //给第三关的球添加运动脚本
+    public void BallAddJumpAndChangeScaleScript(GameObject[] Objs)
+    {
+        for (int i = 0; i < Objs.Length; i++)
+        {
+            Objs[i].gameObject.AddComponent<JumpBallAndChangeScale>();
         }
     }
 }
