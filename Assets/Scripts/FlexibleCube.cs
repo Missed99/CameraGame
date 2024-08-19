@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FlexibleCube : MonoBehaviour
 {
+    public bool isMove = true;
     public Vector3 minScale = new Vector3(0.5f, 0.5f, 1f); // 最小缩放值
     public Vector3 maxScale = new Vector3(2f, 0.5f, 1f); // 最大缩放值
     public float scaleSpeed = 1f; // 伸缩速度
@@ -19,16 +20,19 @@ public class FlexibleCube : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.localScale = Vector3.Lerp(transform.localScale, targetScale, scaleSpeed * Time.deltaTime);
-        if (Vector3.Distance(transform.localScale, maxScale) < 0.01f)
+        if (isMove)
         {
-            transform.localScale = maxScale;
-            targetScale = minScale;
-        }
-        else if(Vector3.Distance(transform.localScale, minScale) < 0.01f)
-        {
-            transform.localScale = minScale;
-            targetScale = maxScale;
+            transform.localScale = Vector3.Lerp(transform.localScale, targetScale, scaleSpeed * Time.deltaTime);
+            if (Vector3.Distance(transform.localScale, maxScale) < 0.01f)
+            {
+                transform.localScale = maxScale;
+                targetScale = minScale;
+            }
+            else if (Vector3.Distance(transform.localScale, minScale) < 0.01f)
+            {
+                transform.localScale = minScale;
+                targetScale = maxScale;
+            }
         }
     }
 }

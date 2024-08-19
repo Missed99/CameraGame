@@ -55,6 +55,8 @@ public class Hit: MonoBehaviour
 
             if (GetComponent<SphereMove>())//¶³½áºÍ½â¶³
                 GetComponent<SphereMove>().isMove = !GetComponent<SphereMove>().isMove;
+            if (GetComponent<FlexibleCube>())
+                GetComponent<FlexibleCube>().isMove = !GetComponent<FlexibleCube>().isMove;
         }
         
     }
