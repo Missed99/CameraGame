@@ -267,7 +267,7 @@ public class Player : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.GetComponent<SphereMove>())
+        if(other.GetComponent<SphereMove>().isDead)
         {
             transform.position = initPos;
         }

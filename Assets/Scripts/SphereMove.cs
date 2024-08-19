@@ -10,6 +10,7 @@ public class SphereMove : MonoBehaviour
     public Vector3 initPos;
     public Vector3 targetPos;
     public bool state;
+    public bool isDead;//ÊÇ·ñÅö´¥ËÀÍö
     // Start is called before the first frame update
     void Start()
     {
