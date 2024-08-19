@@ -11,6 +11,7 @@ TagManager:
   - Smoke
   - Sign
   - Car
+  - NextLevel
   layers:
   - Default
   - TransparentFX
