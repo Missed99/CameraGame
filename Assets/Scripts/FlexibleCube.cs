@@ -44,13 +44,13 @@ public class FlexibleCube : MonoBehaviour
             {
                 // 到达最大缩放值，反转方向
                 transform.localScale = maxScale; // 确保不超过最大值
-                direction = -Vector3.one; // 设置缩放方向为减小
+                direction = -direction; // 设置缩放方向为减小
             }
             else if (transform.localScale.x <= minScale.x)
             {
                 // 到达最小缩放值，反转方向
                 transform.localScale = minScale; // 确保不低于最小值
-                direction = Vector3.one; // 设置缩放方向为增加
+                direction = -direction; // 设置缩放方向为增加
             }
         }
     }
