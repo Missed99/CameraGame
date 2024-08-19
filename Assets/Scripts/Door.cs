@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
+    public int objNum;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +15,7 @@ public class Door : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Player.instance.isRed > 0)
+        if (Player.instance.isRed > objNum)
             transform.DOMoveZ(-6, 1);//开门
         else
             transform.DOMoveZ(-1.75f, 1);//不动

@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
     public float jumpHeight;
     public bool isGrounded;
     public bool isJumping;
+    
     public float slopeForceRayLength = 0.2f;
     public bool isSlope;
     public float slopeForce = 6.0f;
