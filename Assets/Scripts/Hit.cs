@@ -5,6 +5,8 @@ using UnityEngine;
 public class Hit: MonoBehaviour
 {
     public bool isRed;
+    public bool isY;
+    public bool isP;
     public bool isFloat;
     GameObject cube;
     Collider objCollider;
@@ -46,11 +48,24 @@ public class Hit: MonoBehaviour
         if (GeometryUtility.TestPlanesAABB(planes, objCollider.bounds))//屏幕截面去寻找碰撞体（红球
         {
             if (isRed)
-                Player.instance.isRed++;
+                Player.instance.redNum++;
             else if (RayForGame())
-                Player.instance.isRed+=0;
+                {; }
             else
-                Player.instance.isRed--;
+                Player.instance.redNum--;
+
+            if (isY)
+                Player.instance.yNum++;
+            else if (RayForGame())
+            {; }
+            else
+                Player.instance.yNum--;
+            if (isP)
+                Player.instance.pNum++;
+            else if (RayForGame())
+            {; }
+            else
+                Player.instance.pNum--;
             Debug.Log(cube.name + "检测到了");
 
             if (GetComponent<SphereMove>())//冻结和解冻
