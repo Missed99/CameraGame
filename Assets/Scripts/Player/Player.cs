@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
     public float jumpHeight;
     public bool isGrounded;
     public bool isJumping;
+    
     public float slopeForceRayLength = 0.2f;
     public bool isSlope;
     public float slopeForce = 6.0f;
@@ -275,6 +276,12 @@ public class Player : MonoBehaviour
         if(other.gameObject.tag == "Car")
         {
             transform.position = initPos;
+        }
+
+        //进门
+        if(other.gameObject.tag == "NextLevel")
+        {
+            GameManager.Instance.LoadNextScene();//加载下一关
         }
     }
 
