@@ -8,6 +8,9 @@ TagManager:
   - Plane
   - Level3_Ball
   - Wall
+  - Smoke
+  - Sign
+  - Car
   layers:
   - Default
   - TransparentFX

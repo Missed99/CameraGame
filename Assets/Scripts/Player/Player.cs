@@ -270,6 +270,12 @@ public class Player : MonoBehaviour
         {
             transform.position = initPos;
         }
+
+        //撞到车了
+        if(other.gameObject.tag == "Car")
+        {
+            transform.position = initPos;
+        }
     }
 
     //给第三关的球添加运动脚本
