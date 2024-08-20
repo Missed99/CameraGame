@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -84,6 +85,8 @@ public class Player : MonoBehaviour
             speed *= fastSpeedX;
         else if(Input.GetKeyUp(KeyCode.LeftShift))
             speed /= fastSpeedX;
+        if (Input.GetKeyDown(KeyCode.R))
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         //MouseSetting();
 
         //控制玩家运动
