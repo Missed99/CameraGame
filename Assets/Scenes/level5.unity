@@ -5066,7 +5066,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4992255931965809578, guid: 692c5a98af7b3994a8c72af5fb39c52e, type: 3}
       propertyPath: m_text
-      value: 'Target:  Two toy bears'
+      value: 'Target:   two toy bears *3'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
