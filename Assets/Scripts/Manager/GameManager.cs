@@ -33,8 +33,15 @@ public class GameManager : MonoBehaviour
     public void LoadNextScene()
     {
         SceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneIndex++;
-        SceneManager.LoadScene(SceneIndex);
+        if (SceneIndex < 6)
+        {
+            SceneIndex++;
+            SceneManager.LoadScene(SceneIndex);
+        }
+        else if (SceneIndex == 6)
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
     //ÍË³ö
