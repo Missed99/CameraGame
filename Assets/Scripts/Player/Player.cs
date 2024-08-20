@@ -63,6 +63,7 @@ public class Player : MonoBehaviour
 
         //让第三关对应Tag的球添加脚本
         BallAddJumpAndChangeScaleScript(Objs_Level3);
+        initPos = transform.position;
     }
 
     void Update()
