@@ -116,6 +116,8 @@ MonoBehaviour:
   scaleAudioClips:
   - {fileID: 8300000, guid: 45d5eb5e89deacb41a5521bda6cecdad, type: 3}
   - {fileID: 8300000, guid: 316d879c0a9c8f64db395b12e0800787, type: 3}
+  suAudioClips:
+  - {fileID: 8300000, guid: c0f22e2b0ae94b84eba12508f067d3cf, type: 3}
   camera: {fileID: 5080963148425877421}
   speed: 2
   fastSpeedX: 2

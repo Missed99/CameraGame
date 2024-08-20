@@ -42,7 +42,9 @@ public class Door : MonoBehaviour
         if(Player.instance.doorNum==0)
         {
             Destroy(p, 2);
+            Player.instance.PlaySound("Success");
             StartCoroutine(Delay());
+            Player.instance.doorNum = 1;
         }
         
     }
