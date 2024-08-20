@@ -1329,7 +1329,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c27602282765d2445b1e31be65e2a00b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.07
+      value: 2.753
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c27602282765d2445b1e31be65e2a00b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2965,7 +2965,7 @@ MonoBehaviour:
 
     Press space to jump
 
-    Press shift to dash
+    Press shift to move faster
 
     Use
     left mouse button to shoot
