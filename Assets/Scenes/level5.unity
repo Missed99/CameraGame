@@ -277,9 +277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d8e8c50126a21e49a1fb729c1d9bff6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRed: 0
-  isY: 1
-  isP: 0
+  isRed: 1
   isFloat: 0
 --- !u!135 &139965861
 SphereCollider:
@@ -1778,8 +1776,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRed: 1
-  isY: 0
-  isP: 0
   isFloat: 0
 --- !u!135 &352841793
 SphereCollider:
@@ -1879,10 +1875,6 @@ PrefabInstance:
     - target: {fileID: 1875169672607614086, guid: f02c56ed30a5cbf408496685bee4e09b, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 1875169672607614086, guid: f02c56ed30a5cbf408496685bee4e09b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5571279926376788677, guid: f02c56ed30a5cbf408496685bee4e09b, type: 3}
       propertyPath: flash
@@ -2400,8 +2392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec7c61e0d4472c5479e19da5226be0b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objNum: 1
-  num: 2
+  objNum: 0
 --- !u!65 &716953065
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2625,9 +2616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d8e8c50126a21e49a1fb729c1d9bff6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRed: 0
-  isY: 0
-  isP: 1
+  isRed: 1
   isFloat: 0
 --- !u!135 &805146230
 SphereCollider:
@@ -3142,8 +3131,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRed: 1
-  isY: 0
-  isP: 0
   isFloat: 0
 --- !u!135 &959932067
 SphereCollider:
@@ -3852,8 +3839,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec7c61e0d4472c5479e19da5226be0b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objNum: 1
-  num: 0
+  objNum: 0
 --- !u!65 &1200553452
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4475,9 +4461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d8e8c50126a21e49a1fb729c1d9bff6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRed: 0
-  isY: 0
-  isP: 1
+  isRed: 1
   isFloat: 0
 --- !u!135 &1514104305
 SphereCollider:
@@ -4600,23 +4584,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3389948946188050722, guid: 9ac83b6f30dd1ca49b5d600ab09c4f4a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -46.41
+      value: -46.34
       objectReference: {fileID: 0}
     - target: {fileID: 3389948946188050722, guid: 9ac83b6f30dd1ca49b5d600ab09c4f4a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.72088194
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 3389948946188050722, guid: 9ac83b6f30dd1ca49b5d600ab09c4f4a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3389948946188050722, guid: 9ac83b6f30dd1ca49b5d600ab09c4f4a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.6930579
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 3389948946188050722, guid: 9ac83b6f30dd1ca49b5d600ab09c4f4a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3389948946188050722, guid: 9ac83b6f30dd1ca49b5d600ab09c4f4a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4624,7 +4608,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3389948946188050722, guid: 9ac83b6f30dd1ca49b5d600ab09c4f4a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 87.745
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 3389948946188050722, guid: 9ac83b6f30dd1ca49b5d600ab09c4f4a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -5260,9 +5244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d8e8c50126a21e49a1fb729c1d9bff6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRed: 0
-  isY: 1
-  isP: 0
+  isRed: 1
   isFloat: 0
 --- !u!135 &1988215977
 SphereCollider:
@@ -5381,19 +5363,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3389948946188050722, guid: 9ac83b6f30dd1ca49b5d600ab09c4f4a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.700003
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 3389948946188050722, guid: 9ac83b6f30dd1ca49b5d600ab09c4f4a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3389948946188050722, guid: 9ac83b6f30dd1ca49b5d600ab09c4f4a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7141399
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 3389948946188050722, guid: 9ac83b6f30dd1ca49b5d600ab09c4f4a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3389948946188050722, guid: 9ac83b6f30dd1ca49b5d600ab09c4f4a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5401,7 +5383,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3389948946188050722, guid: 9ac83b6f30dd1ca49b5d600ab09c4f4a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -91.146
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 3389948946188050722, guid: 9ac83b6f30dd1ca49b5d600ab09c4f4a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -5453,8 +5435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec7c61e0d4472c5479e19da5226be0b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objNum: 1
-  num: 1
+  objNum: 0
 --- !u!65 &2008051234
 BoxCollider:
   m_ObjectHideFlags: 0

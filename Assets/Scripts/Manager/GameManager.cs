@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    private int SceneIndex = 0;
+    public int SceneIndex = 0;
 
     private void Awake()
     {
@@ -46,5 +46,7 @@ public class GameManager : MonoBehaviour
     public void Win()
     {
         Debug.Log("Í¨¹Ø");
+
+        AudioManager.Instance.ChangeBGMAudioClip(SceneIndex);//ÇÐ»»BGM
     }
 }
