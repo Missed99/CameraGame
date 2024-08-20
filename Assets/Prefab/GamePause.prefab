@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 4687001229968495144}
   - component: {fileID: 6658219087241871419}
   - component: {fileID: 3947214104696307890}
+  - component: {fileID: 4485295637883174005}
   m_Layer: 0
   m_Name: Menu
   m_TagString: Untagged
@@ -267,6 +268,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4485295637883174005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368730989191263211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1add954731b0d704890298416db35969, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectSound: {fileID: 8300000, guid: f99b8d77f7615dc42af2c13806896ebd, type: 3}
+  clickSound: {fileID: 8300000, guid: d88ecf56029d0d94f9e16ccc62c3520b, type: 3}
 --- !u!1 &1112288998692010223
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,6 +294,7 @@ GameObject:
   - component: {fileID: 325644143881908256}
   - component: {fileID: 4702773638727964723}
   - component: {fileID: 6955910581386863248}
+  - component: {fileID: 3573557543436322333}
   m_Layer: 0
   m_Name: Continue
   m_TagString: Untagged
@@ -400,6 +416,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3573557543436322333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112288998692010223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1add954731b0d704890298416db35969, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectSound: {fileID: 8300000, guid: f99b8d77f7615dc42af2c13806896ebd, type: 3}
+  clickSound: {fileID: 8300000, guid: d88ecf56029d0d94f9e16ccc62c3520b, type: 3}
 --- !u!1 &2345241310181150566
 GameObject:
   m_ObjectHideFlags: 0
