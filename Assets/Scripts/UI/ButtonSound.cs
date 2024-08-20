@@ -8,7 +8,8 @@ public class ButtonSound : MonoBehaviour
 {
     public AudioClip selectSound; 
     public AudioClip clickSound; 
-    private AudioSource audioSource; 
+    private AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,13 +31,11 @@ public class ButtonSound : MonoBehaviour
         trigger.triggers.Add(entry);
     }
 
-    // 选中时播放音效
     void OnSelect()
     {
         PlaySound(selectSound);
     }
 
-    // 点击时播放音效
     void OnClick()
     {
         PlaySound(clickSound);

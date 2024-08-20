@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    [SerializeField] private GameObject eventSystem;
+    //[SerializeField] private GameObject eventSystem;
     public void StartGame()
     {
         SceneManager.LoadScene(1);
@@ -14,10 +14,11 @@ public class Menu : MonoBehaviour
     {
         Application.Quit();
     }
-    private void Start()
+
+    /*private void Start()
     {
         DontDestroyOnLoad(eventSystem);
-    }
+    }*/
     private void Update()
     {
         if (GamePause.isPause == false)
