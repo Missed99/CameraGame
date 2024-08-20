@@ -712,6 +712,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9cd56ab00fbc718419177626d489926d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 183853735}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9cd56ab00fbc718419177626d489926d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 183853736}
   m_SourcePrefab: {fileID: 100100000, guid: 9cd56ab00fbc718419177626d489926d, type: 3}
 --- !u!1 &183853734 stripped
 GameObject:
@@ -734,6 +737,28 @@ MonoBehaviour:
   curveType: 0
   time: 5156.62
   originalPosition: {x: 0, y: 0, z: 0}
+--- !u!64 &183853736
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183853734}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7357464462599445873, guid: 9cd56ab00fbc718419177626d489926d, type: 3}
 --- !u!1 &203844752
 GameObject:
   m_ObjectHideFlags: 0
@@ -3555,8 +3580,8 @@ GameObject:
   - component: {fileID: 706318067}
   - component: {fileID: 706318066}
   - component: {fileID: 706318065}
-  - component: {fileID: 706318064}
   - component: {fileID: 706318063}
+  - component: {fileID: 706318068}
   m_Layer: 0
   m_Name: chabei (1)
   m_TagString: Ball
@@ -3580,27 +3605,6 @@ MonoBehaviour:
   isY: 0
   isP: 0
   isFloat: 0
---- !u!135 &706318064
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 706318062}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.6
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &706318065
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3666,6 +3670,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -67.724, y: -287.471, z: 271.651}
+--- !u!64 &706318068
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706318062}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7357464462599445873, guid: 9cd56ab00fbc718419177626d489926d, type: 3}
 --- !u!1 &711640223
 GameObject:
   m_ObjectHideFlags: 0
@@ -5061,6 +5087,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9cd56ab00fbc718419177626d489926d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 983096232}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9cd56ab00fbc718419177626d489926d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 983096233}
   m_SourcePrefab: {fileID: 100100000, guid: 9cd56ab00fbc718419177626d489926d, type: 3}
 --- !u!1 &983096231 stripped
 GameObject:
@@ -5083,6 +5112,28 @@ MonoBehaviour:
   curveType: 0
   time: 5156.62
   originalPosition: {x: 0, y: 0, z: 0}
+--- !u!64 &983096233
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983096231}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7357464462599445873, guid: 9cd56ab00fbc718419177626d489926d, type: 3}
 --- !u!1 &993477820
 GameObject:
   m_ObjectHideFlags: 0
@@ -5199,8 +5250,8 @@ GameObject:
   - component: {fileID: 1023343573}
   - component: {fileID: 1023343572}
   - component: {fileID: 1023343571}
-  - component: {fileID: 1023343570}
   - component: {fileID: 1023343569}
+  - component: {fileID: 1023343574}
   m_Layer: 0
   m_Name: chabei (2)
   m_TagString: Ball
@@ -5224,27 +5275,6 @@ MonoBehaviour:
   isY: 0
   isP: 0
   isFloat: 0
---- !u!135 &1023343570
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1023343568}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.6
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1023343571
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5310,6 +5340,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -67.724, y: -287.471, z: 271.651}
+--- !u!64 &1023343574
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023343568}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7357464462599445873, guid: 9cd56ab00fbc718419177626d489926d, type: 3}
 --- !u!1 &1023504440
 GameObject:
   m_ObjectHideFlags: 0
@@ -7927,8 +7979,8 @@ GameObject:
   - component: {fileID: 1698652193}
   - component: {fileID: 1698652192}
   - component: {fileID: 1698652191}
-  - component: {fileID: 1698652190}
   - component: {fileID: 1698652189}
+  - component: {fileID: 1698652194}
   m_Layer: 0
   m_Name: chabei
   m_TagString: Ball
@@ -7952,27 +8004,6 @@ MonoBehaviour:
   isY: 0
   isP: 0
   isFloat: 0
---- !u!135 &1698652190
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1698652188}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.04
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1698652191
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8038,6 +8069,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -22.56, y: -57.556, z: 86.742}
+--- !u!64 &1698652194
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698652188}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7357464462599445873, guid: 9cd56ab00fbc718419177626d489926d, type: 3}
 --- !u!1 &1704822305
 GameObject:
   m_ObjectHideFlags: 0
