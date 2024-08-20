@@ -730,6 +730,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objNum: 0
   num: 0
+  p: {fileID: 0}
 --- !u!65 &295723923
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3975,6 +3976,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objNum: 0
   num: 0
+  p: {fileID: 0}
 --- !u!1 &1358023911
 GameObject:
   m_ObjectHideFlags: 0
@@ -4625,6 +4627,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objNum: 0
   num: 0
+  p: {fileID: 0}
 --- !u!65 &1691247216
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5254,6 +5257,14 @@ PrefabInstance:
       propertyPath: flashDuration
       value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 5571279926376788677, guid: f02c56ed30a5cbf408496685bee4e09b, type: 3}
+      propertyPath: suAudioClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5571279926376788677, guid: f02c56ed30a5cbf408496685bee4e09b, type: 3}
+      propertyPath: suAudioClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: c0f22e2b0ae94b84eba12508f067d3cf, type: 3}
     - target: {fileID: 7356039401437456581, guid: f02c56ed30a5cbf408496685bee4e09b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.19
@@ -5358,6 +5369,10 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1300550120673097054, guid: 692c5a98af7b3994a8c72af5fb39c52e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300550120673097054, guid: 692c5a98af7b3994a8c72af5fb39c52e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
@@ -5446,7 +5461,15 @@ PrefabInstance:
       value: FlashCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 2715139962751592694, guid: 692c5a98af7b3994a8c72af5fb39c52e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2715139962751592694, guid: 692c5a98af7b3994a8c72af5fb39c52e, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2715139962751592694, guid: 692c5a98af7b3994a8c72af5fb39c52e, type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

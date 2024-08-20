@@ -103,6 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c16b048de230be429e70c1361907022, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doorNum: 0
   initPos: {x: 0, y: 0, z: 0}
   redNum: 0
   yNum: 0
@@ -115,6 +116,8 @@ MonoBehaviour:
   scaleAudioClips:
   - {fileID: 8300000, guid: 45d5eb5e89deacb41a5521bda6cecdad, type: 3}
   - {fileID: 8300000, guid: 316d879c0a9c8f64db395b12e0800787, type: 3}
+  suAudioClips:
+  - {fileID: 8300000, guid: c0f22e2b0ae94b84eba12508f067d3cf, type: 3}
   camera: {fileID: 5080963148425877421}
   speed: 2
   fastSpeedX: 2
