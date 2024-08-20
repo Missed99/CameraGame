@@ -113,7 +113,6 @@ MonoBehaviour:
   audioClips:
   - {fileID: 8300000, guid: f6b91bf9aa90b644695474fc97b60e3e, type: 3}
   scaleAudioClips:
-  - {fileID: 8300000, guid: f201940a7a5a3b64d866b6ab753b310d, type: 3}
   - {fileID: 8300000, guid: 45d5eb5e89deacb41a5521bda6cecdad, type: 3}
   - {fileID: 8300000, guid: 316d879c0a9c8f64db395b12e0800787, type: 3}
   camera: {fileID: 5080963148425877421}

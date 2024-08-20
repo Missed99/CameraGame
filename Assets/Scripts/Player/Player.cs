@@ -152,7 +152,7 @@ public class Player : MonoBehaviour
         if(s=="Action")
         GetComponent<AudioSource>().PlayOneShot(audioClips[0]);
         if(s=="Scale")
-            GetComponent<AudioSource>().PlayOneShot(scaleAudioClips[Random.Range(0,3)]);
+            GetComponent<AudioSource>().PlayOneShot(scaleAudioClips[Random.Range(0,2)]);
     }
 
     //检测是否在地面
@@ -211,7 +211,7 @@ public class Player : MonoBehaviour
             Camera.main.fieldOfView = 50;
         if (Camera.main.fieldOfView < 20)
             Camera.main.fieldOfView = 20;
-        slider.value = Camera.main.fieldOfView / 50;
+        slider.value = (Camera.main.fieldOfView-20) / 30;
         
     }
 
