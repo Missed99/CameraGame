@@ -1,19 +1,9 @@
 fileFormatVersion: 2
-guid: c27602282765d2445b1e31be65e2a00b
+guid: fda3a1194d1aa9840838f8ee89c7d9ec
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: examen mate
-    second: {fileID: 2100000, guid: d0f1605f152d9ac4884e0840f449f26f, type: 2}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: examen mate
-    second: {fileID: 2800000, guid: 2ee11784bc9960345a00fe7752c1a521, type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
