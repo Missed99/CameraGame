@@ -9,6 +9,8 @@ public class SpiralTest : MonoBehaviour
     public float angle;
     //public float riseSpeed;//上升速度
 
+    public float StartTime;
+
     private bool isStart = false;
 
     public Transform center;
@@ -24,18 +26,26 @@ public class SpiralTest : MonoBehaviour
         //surround = GameObject.CreatePrimitive(PrimitiveType.Sphere).transform;//围绕中心旋转的物体
         //center.name = "Center";
         //surround.name = "Surround";
+
         surround = transform;
         distance = (surround.position - center.position).magnitude;
         //surround.position = Vector3.Normalize(Vector3.forward) * distance + center.position;//指定旋转物体的位置
 
 
+        StartTime = Random.Range(1, 3);
+
+        
+    }
+
+    private void Start()
+    {
         //开始旋转
         StartCoroutine(InitEnd());
     }
 
     IEnumerator InitEnd()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(StartTime);
         isStart = true;
     }
 
