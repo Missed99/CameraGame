@@ -12,7 +12,7 @@ public class Door : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        p=GameObject.Find("Plane");
+        p = GameObject.Find("Plane");
     }
 
     // Update is called once per frame
