@@ -10,6 +10,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    public int doorNum;
     public Vector3 initPos;//玩家起始位置
     public int redNum;
     public int yNum;

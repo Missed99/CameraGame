@@ -4474,6 +4474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objNum: 0
   num: 0
+  p: {fileID: 0}
 --- !u!65 &1137234946
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4744,6 +4745,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1300550120673097054, guid: 692c5a98af7b3994a8c72af5fb39c52e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300550120673097054, guid: 692c5a98af7b3994a8c72af5fb39c52e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
@@ -4832,7 +4837,15 @@ PrefabInstance:
       value: FlashCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 2715139962751592694, guid: 692c5a98af7b3994a8c72af5fb39c52e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2715139962751592694, guid: 692c5a98af7b3994a8c72af5fb39c52e, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2715139962751592694, guid: 692c5a98af7b3994a8c72af5fb39c52e, type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -6110,6 +6123,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1153569499}
     - target: {fileID: 5571279926376788677, guid: f02c56ed30a5cbf408496685bee4e09b, type: 3}
+      propertyPath: doorNum
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5571279926376788677, guid: f02c56ed30a5cbf408496685bee4e09b, type: 3}
       propertyPath: sphereRadius
       value: 0.05
       objectReference: {fileID: 0}
@@ -6864,7 +6881,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &1853224758
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7706,6 +7723,10 @@ PrefabInstance:
     - target: {fileID: 22046303199654159, guid: 752b6c3d6069bf745b23cc1b84cd29fc, type: 3}
       propertyPath: m_TagString
       value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 50754954277266222, guid: 752b6c3d6069bf745b23cc1b84cd29fc, type: 3}
+      propertyPath: m_Name
+      value: Plane
       objectReference: {fileID: 0}
     - target: {fileID: 50754954277266222, guid: 752b6c3d6069bf745b23cc1b84cd29fc, type: 3}
       propertyPath: m_TagString
