@@ -15,9 +15,11 @@ public class Player : MonoBehaviour
     public int pNum;
     public GameObject[] Objs;//Tag == Ball
     public GameObject[] Objs_Level3;//Tag == Level3_Ball
+    public Slider slider;
 
     public static Player instance;
     public AudioClip[] audioClips;
+    public AudioClip[] scaleAudioClips;
     CharacterController player;  //定义角色控制器组件
     public new Transform camera; //新建一个camera对象用于放入所要实现的第一人称相机
     public float speed = 2f;			 //角色移动速度
@@ -50,6 +52,10 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        slider = GameObject.Find("Slider").GetComponent<Slider>();
+        slider.onValueChanged.AddListener(delegate {
+            PlaySound("Scale");
+        }) ;
         //让所有球添加悬浮脚本
         BallAddFloatingScript(Objs);
 
@@ -141,9 +147,12 @@ public class Player : MonoBehaviour
     }
 
     //快门声音
-    public void PlaySound()
+    public void PlaySound(string s)
     {
+        if(s=="Action")
         GetComponent<AudioSource>().PlayOneShot(audioClips[0]);
+        if(s=="Scale")
+            GetComponent<AudioSource>().PlayOneShot(scaleAudioClips[Random.Range(0,3)]);
     }
 
     //检测是否在地面
@@ -170,7 +179,7 @@ public class Player : MonoBehaviour
             redNum = 0;
             yNum = 0;
             pNum =0;
-            PlaySound();
+            PlaySound("Action");
             TriggerFlash();
             foreach (var item in Objs)//遍历所有的球
             {
@@ -202,6 +211,8 @@ public class Player : MonoBehaviour
             Camera.main.fieldOfView = 50;
         if (Camera.main.fieldOfView < 20)
             Camera.main.fieldOfView = 20;
+        slider.value = Camera.main.fieldOfView / 50;
+        
     }
 
     ////地面检测调试
