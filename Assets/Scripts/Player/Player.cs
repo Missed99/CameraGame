@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     public static Player instance;
     public AudioClip[] audioClips;
     public AudioClip[] scaleAudioClips;
+    public AudioClip[] suAudioClips;
     CharacterController player;  //定义角色控制器组件
     public new Transform camera; //新建一个camera对象用于放入所要实现的第一人称相机
     public float speed = 2f;			 //角色移动速度
@@ -157,7 +158,9 @@ public class Player : MonoBehaviour
         if(s=="Action")
         GetComponent<AudioSource>().PlayOneShot(audioClips[0]);
         if(s=="Scale")
-            GetComponent<AudioSource>().PlayOneShot(scaleAudioClips[Random.Range(0,2)]);
+            GetComponent<AudioSource>().PlayOneShot(scaleAudioClips[Random.Range(0,2)], 0.7f);
+        if(s=="Success")
+            GetComponent<AudioSource>().PlayOneShot(suAudioClips[0],0.5f);
     }
 
     //检测是否在地面
