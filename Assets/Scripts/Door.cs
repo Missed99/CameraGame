@@ -51,6 +51,15 @@ public class Door : MonoBehaviour
     IEnumerator Delay()
     {
         yield return new WaitForSeconds(3);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        int SceneIndex = SceneManager.GetActiveScene().buildIndex;
+        if (SceneIndex < 6)
+        {
+            SceneIndex++;
+            SceneManager.LoadScene(SceneIndex);
+        }
+        else if (SceneIndex == 6)
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 }
