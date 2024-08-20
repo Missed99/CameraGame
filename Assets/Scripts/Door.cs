@@ -9,6 +9,9 @@ public class Door : MonoBehaviour
     public int objNum;
     public float num;
     public GameObject p;
+
+    private int SceneIndex = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +21,8 @@ public class Door : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        SceneIndex = SceneManager.GetActiveScene().buildIndex;
+
         if (num == 0 && Player.instance.redNum > objNum)
         {
                 num += Time.deltaTime;
@@ -51,15 +56,23 @@ public class Door : MonoBehaviour
     IEnumerator Delay()
     {
         yield return new WaitForSeconds(3);
-        int SceneIndex = SceneManager.GetActiveScene().buildIndex;
+
         if (SceneIndex < 6)
         {
+
             SceneIndex++;
             SceneManager.LoadScene(SceneIndex);
+
         }
-        else if (SceneIndex == 6)
+        else
         {
-            SceneManager.LoadScene(0);
+            if (SceneIndex == 6)
+            {
+                SceneManager.LoadScene(0);
+            }
         }
+
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //GameManager.Instance.LoadNextScene();
     }
 }
