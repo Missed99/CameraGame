@@ -11,7 +11,7 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     public int doorNum;
-    public Vector3 initPos;//Íæ¼ÒÆğÊ¼Î»ÖÃ
+    public Vector3 initPos;//ç©å®¶èµ·å§‹ä½ç½®
     public int redNum;
     public int yNum;
     public int pNum;
@@ -23,19 +23,19 @@ public class Player : MonoBehaviour
     public AudioClip[] audioClips;
     public AudioClip[] scaleAudioClips;
     public AudioClip[] suAudioClips;
-    CharacterController player;  //¶¨Òå½ÇÉ«¿ØÖÆÆ÷×é¼ş
-    public new Transform camera; //ĞÂ½¨Ò»¸öcamera¶ÔÏóÓÃÓÚ·ÅÈëËùÒªÊµÏÖµÄµÚÒ»ÈË³ÆÏà»ú
-    public float speed = 2f;			 //½ÇÉ«ÒÆ¶¯ËÙ¶È
+    CharacterController player;  //å®šä¹‰è§’è‰²æ§åˆ¶å™¨ç»„ä»¶
+    public  Transform camera; //æ–°å»ºä¸€ä¸ªcameraå¯¹è±¡ç”¨äºæ”¾å…¥æ‰€è¦å®ç°çš„ç¬¬ä¸€äººç§°ç›¸æœº
+    public float speed = 2f;			 //è§’è‰²ç§»åŠ¨é€Ÿåº¦
     public int fastSpeedX;
-    float x, y;                  //Ïà»úĞı×ªx£¬yÖá¿ØÖÆ
-    float g = -9.8f;               //ÖØÁ¦
-    Vector3 playerrun;           //¿ØÖÆÍæ¼ÒÔË¶¯µÄÏòÁ¿
+    float x, y;                  //ç›¸æœºæ—‹è½¬xï¼Œyè½´æ§åˆ¶
+    float g = -9.8f;               //é‡åŠ›
+    Vector3 playerrun;           //æ§åˆ¶ç©å®¶è¿åŠ¨çš„å‘é‡
     public Image flash;  
     public float flashDuration = 0.01f;
 
-    //µØÃæ¼ì²â
-    public Transform groundCheckTransform;//¼ì²âµÄµã
-    public float sphereRadius;//¼ì²â°ë¾¶
+    //åœ°é¢æ£€æµ‹
+    public Transform groundCheckTransform;//æ£€æµ‹çš„ç‚¹
+    public float sphereRadius;//æ£€æµ‹åŠå¾„
     public float jumpHeight;
     public bool isGrounded;
     public bool isJumping;
@@ -47,9 +47,9 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        Objs = GameObject.FindGameObjectsWithTag("Ball");//ÕÒµ½ËùÓĞµÄball
-        Objs_Level3 = GameObject.FindGameObjectsWithTag("Level3_Ball"); ;//ÕÒµ½µÚÈı¹Ø¶ÔÓ¦TagµÄBall
-        player = GetComponent<CharacterController>();//»ñÈ¡ÈËÎïµÄ½ÇÉ«¿ØÖÆÆ÷×é¼ş 
+        Objs = GameObject.FindGameObjectsWithTag("Ball");//æ‰¾åˆ°æ‰€æœ‰çš„ball
+        Objs_Level3 = GameObject.FindGameObjectsWithTag("Level3_Ball"); ;//æ‰¾åˆ°ç¬¬ä¸‰å…³å¯¹åº”Tagçš„Ball
+        player = GetComponent<CharacterController>();//è·å–äººç‰©çš„è§’è‰²æ§åˆ¶å™¨ç»„ä»¶ 
         flash.color = new Color(1, 1, 1, 0); 
     }
 
@@ -59,32 +59,32 @@ public class Player : MonoBehaviour
         slider.onValueChanged.AddListener(delegate {
             PlaySound("Scale");
         }) ;
-        //ÈÃËùÓĞÇòÌí¼ÓĞü¸¡½Å±¾
+        //è®©æ‰€æœ‰çƒæ·»åŠ æ‚¬æµ®è„šæœ¬
         BallAddFloatingScript(Objs);
 
-        //ÈÃµÚÈı¹Ø¶ÔÓ¦TagµÄÇòÌí¼Ó½Å±¾
+        //è®©ç¬¬ä¸‰å…³å¯¹åº”Tagçš„çƒæ·»åŠ è„šæœ¬
         BallAddJumpAndChangeScaleScript(Objs_Level3);
         initPos = transform.position;
     }
 
     void Update()
     {
-        //Ğ±ÆÂ¼ì²â¿ÉÊÓ»¯
+        //æ–œå¡æ£€æµ‹å¯è§†åŒ–
         //Debug.DrawRay(transform.position + player.height / 2 * Vector3.down, Vector3.down * player.height / 2 * slopeForceRayLength, Color.blue);
 
-        //µØÃæ¼ì²â
+        //åœ°é¢æ£€æµ‹
         isSlope = OnSlope();
         
-        //ÅÄÕÕ
+        //æ‹ç…§
         TakePhoto();
 
-        //Êó±êÉèÖÃ
+        //é¼ æ ‡è®¾ç½®
         if (GamePause.isPause == false)
         {
             MouseSetting();
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))//Íæ¼Ò¿ìËÙÒÆ¶¯
+        if (Input.GetKeyDown(KeyCode.LeftShift))//ç©å®¶å¿«é€Ÿç§»åŠ¨
             speed *= fastSpeedX;
         else if(Input.GetKeyUp(KeyCode.LeftShift))
             speed /= fastSpeedX;
@@ -92,11 +92,11 @@ public class Player : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         //MouseSetting();
 
-        //¿ØÖÆÍæ¼ÒÔË¶¯
+        //æ§åˆ¶ç©å®¶è¿åŠ¨
         float _horizontal = Input.GetAxis("Horizontal");
         float _vertical = Input.GetAxis("Vertical");
 
-        //ÒÆ¶¯ÏòÁ¿
+        //ç§»åŠ¨å‘é‡
         if (player.isGrounded)
         {
             playerrun = new Vector3(_horizontal, 0, _vertical) * speed;
@@ -109,50 +109,50 @@ public class Player : MonoBehaviour
         bool jump = Input.GetButtonDown("Jump");
         if (isSlope || player.isGrounded)
         {
-            // ÔÚ×ÅµØÊ±×èÖ¹´¹Ö±ËÙ¶ÈÎŞÏŞÏÂ½µ
+            // åœ¨ç€åœ°æ—¶é˜»æ­¢å‚ç›´é€Ÿåº¦æ— é™ä¸‹é™
             if (playerrun.y < 0.0f)
             {
                 playerrun.y = -2f;
             }
 
-            //ÌøÔ¾
+            //è·³è·ƒ
             if (jump)
             {
                 playerrun.y = Mathf.Sqrt(jumpHeight * -2f * g);
             }
         }
 
-        //ÖØÁ¦
+        //é‡åŠ›
         playerrun.y += g * Time.deltaTime;
 
-        Physics.autoSyncTransforms = true;//ÓÃÀ´½â¾öCharacterControllerµ¼ÖÂµÄTransform.Position¸³Öµºó²»Æğ×÷ÓÃ
-        //ÒÆ¶¯
+        Physics.autoSyncTransforms = true;//ç”¨æ¥è§£å†³CharacterControllerå¯¼è‡´çš„Transform.Positionèµ‹å€¼åä¸èµ·ä½œç”¨
+        //ç§»åŠ¨
         player.Move(player.transform.TransformDirection(playerrun * Time.deltaTime));
 
-        //Ê¹ÓÃÊó±êÀ´¿ØÖÆÏà»úµÄÊÓ½ÇµÄĞı×ª
+        //ä½¿ç”¨é¼ æ ‡æ¥æ§åˆ¶ç›¸æœºçš„è§†è§’çš„æ—‹è½¬
         x += Input.GetAxis("Mouse X");
         y -= Input.GetAxis("Mouse Y");
         transform.eulerAngles = new Vector3(0, x, 0);
         y = Mathf.Clamp(y, -45f, 45f);
         camera.eulerAngles = new Vector3(y, x, 0);
 
-        //Ïà»úµÄÏŞÖÆ
+        //ç›¸æœºçš„é™åˆ¶
         CameraRestraint();
     }
 
-    //¿ØÖÆĞ±ÆÂ
+    //æ§åˆ¶æ–œå¡
     public void SetSlope()
     {
-        //Èç¹û´¦ÓÚĞ±ÆÂ
+        //å¦‚æœå¤„äºæ–œå¡
         if (isSlope && !isJumping)
         {
-            //ÏòÏÂÔö¼ÓÁ¦
+            //å‘ä¸‹å¢åŠ åŠ›
             playerrun.y = player.height / 2 * slopeForceRayLength;
             player.Move(Vector3.down * player.height / 2 * slopeForce * Time.deltaTime);
         }
     }
 
-    //¿ìÃÅÉùÒô
+    //å¿«é—¨å£°éŸ³
     public void PlaySound(string s)
     {
         if(s=="Action")
@@ -163,25 +163,25 @@ public class Player : MonoBehaviour
             GetComponent<AudioSource>().PlayOneShot(suAudioClips[0],0.5f);
     }
 
-    //¼ì²âÊÇ·ñÔÚµØÃæ
+    //æ£€æµ‹æ˜¯å¦åœ¨åœ°é¢
     private bool CheckIsGrounded()
     {
-        Collider[] colliders = Physics.OverlapSphere(groundCheckTransform.position, sphereRadius);//¼ì²â·¶Î§ÄÚÅö×²µÄÎïÌå
+        Collider[] colliders = Physics.OverlapSphere(groundCheckTransform.position, sphereRadius);//æ£€æµ‹èŒƒå›´å†…ç¢°æ’çš„ç‰©ä½“
         foreach (Collider collider in colliders)
         {
             if (collider.gameObject.CompareTag("Plane"))
             {
-                Debug.Log("¼ì²âµ½ÁËµØÃæ");
+                Debug.Log("æ£€æµ‹åˆ°äº†åœ°é¢");
                 return true;
             }
         }
         return false;
     }
 
-    //ÅÄÕÕ
+    //æ‹ç…§
     private void TakePhoto()
     {
-        //Êó±ê°´ÏÂ×ó¼ü
+        //é¼ æ ‡æŒ‰ä¸‹å·¦é”®
         if (Input.GetMouseButtonDown(0) && GamePause.isPause == false)
         {
             redNum = 0;
@@ -189,24 +189,24 @@ public class Player : MonoBehaviour
             pNum =0;
             PlaySound("Action");
             TriggerFlash();
-            foreach (var item in Objs)//±éÀúËùÓĞµÄÇò
+            foreach (var item in Objs)//éå†æ‰€æœ‰çš„çƒ
             {
                 item.GetComponent<Hit>().Detect();
             }
         }
     }
 
-    //Êó±ê
+    //é¼ æ ‡
     private void MouseSetting()
     {
-        Cursor.lockState = CursorLockMode.Locked; // Ëø¶¨Êó±êµ½ÊÓÍ¼ÖĞĞÄ
-        Cursor.visible = false;//Òş²ØÊó±ê
+        Cursor.lockState = CursorLockMode.Locked; // é”å®šé¼ æ ‡åˆ°è§†å›¾ä¸­å¿ƒ
+        Cursor.visible = false;//éšè—é¼ æ ‡
     }
 
-    //Ïà»úÏŞÖÆ
+    //ç›¸æœºé™åˆ¶
     private void CameraRestraint()
     {
-        //ÈÃÏà»úzÖá±£³Ö²»±ä£¬·ÀÖ¹Ïà»úÇãĞ±
+        //è®©ç›¸æœºzè½´ä¿æŒä¸å˜ï¼Œé˜²æ­¢ç›¸æœºå€¾æ–œ
         if (camera.localEulerAngles.z != 0)
         {
             float rotX = camera.localEulerAngles.x;
@@ -223,31 +223,31 @@ public class Player : MonoBehaviour
         
     }
 
-    ////µØÃæ¼ì²âµ÷ÊÔ
+    ////åœ°é¢æ£€æµ‹è°ƒè¯•
     //private void OnDrawGizmos()
     //{
     //    Gizmos.color = Color.blue;
 
-    //    //µØÃæ¼ì²â¿ÉÊÓ»¯
+    //    //åœ°é¢æ£€æµ‹å¯è§†åŒ–
     //    Gizmos.DrawWireSphere(groundCheckTransform.position, sphereRadius);
     //}
 
-    //ÊÇ·ñÔÚĞ±Ãæ
+    //æ˜¯å¦åœ¨æ–œé¢
     public bool OnSlope()
     {
         RaycastHit hit;
 
-        // ÏòÏÂ´ò³öÉäÏß£¨¼ì²âÊÇ·ñÔÚĞ±ÆÂÉÏ£©
+        // å‘ä¸‹æ‰“å‡ºå°„çº¿ï¼ˆæ£€æµ‹æ˜¯å¦åœ¨æ–œå¡ä¸Šï¼‰
         if (Physics.Raycast(transform.position + player.height / 2 * Vector3.down, Vector3.down, out hit, player.height / 2 * slopeForceRayLength))
         {
-            // Èç¹û½Ó´¥µ½µÄµãµÄ·¨Ïß£¬²»ÔÚ(0,1,0)µÄ·½ÏòÉÏ£¬ÄÇÃ´ÈËÎï¾ÍÔÚĞ±ÆÂÉÏ
+            // å¦‚æœæ¥è§¦åˆ°çš„ç‚¹çš„æ³•çº¿ï¼Œä¸åœ¨(0,1,0)çš„æ–¹å‘ä¸Šï¼Œé‚£ä¹ˆäººç‰©å°±åœ¨æ–œå¡ä¸Š
             if (hit.normal != Vector3.up)
                 return true;
         }
         return false;
     }
 
-    //¸øËùÓĞµÄBallÌí¼ÓĞü¸¡½Å±¾
+    //ç»™æ‰€æœ‰çš„Ballæ·»åŠ æ‚¬æµ®è„šæœ¬
     public void BallAddFloatingScript(GameObject[] Objs)
     {
         for(int i = 0; i < Objs.Length; i++)
@@ -262,30 +262,30 @@ public class Player : MonoBehaviour
     }
     private IEnumerator Flashing()
     {
-        // Öğ½¥ÏÔÊ¾
+        // é€æ¸æ˜¾ç¤º
         float elapsed = 0f;
         while (elapsed < flashDuration)
         {
             elapsed += Time.deltaTime;
-            float alpha = Mathf.Clamp01(elapsed / (flashDuration / 2)); // Ç°°ë²¿·Ö½¥½¥Ôö¼Ó
+            float alpha = Mathf.Clamp01(elapsed / (flashDuration / 2)); // å‰åŠéƒ¨åˆ†æ¸æ¸å¢åŠ 
             flash.color = new Color(1, 1, 1, alpha);
             yield return null;
         }
 
-        // Ë²¼äÍ¸Ã÷
+        // ç¬é—´é€æ˜
         flash.color = new Color(1, 1, 1, 1);
 
-        // Öğ½¥ÏûÊ§
+        // é€æ¸æ¶ˆå¤±
         elapsed = 0f;
         while (elapsed < flashDuration)
         {
             elapsed += Time.deltaTime;
-            float alpha = Mathf.Clamp01(1 - (elapsed / (flashDuration / 2))); // ºó°ë²¿·Ö½¥½¥¼õÉÙ
+            float alpha = Mathf.Clamp01(1 - (elapsed / (flashDuration / 2))); // ååŠéƒ¨åˆ†æ¸æ¸å‡å°‘
             flash.color = new Color(1, 1, 1, alpha);
             yield return null;
         }
 
-        // È·±£ÍêÈ«Í¸Ã÷
+        // ç¡®ä¿å®Œå…¨é€æ˜
         flash.color = new Color(1, 1, 1, 0);
     }
     private void OnTriggerEnter(Collider other)
@@ -295,20 +295,20 @@ public class Player : MonoBehaviour
             transform.position = initPos;
         }
 
-        //×²µ½³µÁË
+        //æ’åˆ°è½¦äº†
         if(other.gameObject.tag == "Car")
         {
             transform.position = initPos;
         }
 
-        //½øÃÅ
+        //è¿›é—¨
         if(other.gameObject.tag == "NextLevel")
         {
-            GameManager.Instance.LoadNextScene();//¼ÓÔØÏÂÒ»¹Ø
+            GameManager.Instance.LoadNextScene();//åŠ è½½ä¸‹ä¸€å…³
         }
     }
 
-    //¸øµÚÈı¹ØµÄÇòÌí¼ÓÔË¶¯½Å±¾
+    //ç»™ç¬¬ä¸‰å…³çš„çƒæ·»åŠ è¿åŠ¨è„šæœ¬
     public void BallAddJumpAndChangeScaleScript(GameObject[] Objs)
     {
         for (int i = 0; i < Objs.Length; i++)
