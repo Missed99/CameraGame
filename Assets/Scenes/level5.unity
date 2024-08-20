@@ -437,7 +437,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 455303055083973650, guid: f5671b7fe90d5fa4391d129243bec653, type: 3}
       propertyPath: m_TagString
-      value: Ball
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 468556714413626843, guid: f5671b7fe90d5fa4391d129243bec653, type: 3}
       propertyPath: m_TagString
@@ -842,6 +842,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objNum: 1
   num: 0
+  p: {fileID: 0}
 --- !u!65 &344389525
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2405,7 +2406,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 619037862}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d8e8c50126a21e49a1fb729c1d9bff6, type: 3}
   m_Name: 
@@ -2717,6 +2718,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objNum: 1
   num: 2
+  p: {fileID: 0}
 --- !u!65 &716953065
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3729,8 +3731,8 @@ Transform:
   m_GameObject: {fileID: 1060030020}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.0316, y: 0, z: -64.6956}
-  m_LocalScale: {x: 8.13408, y: 5, z: 6.7216797}
+  m_LocalPosition: {x: 3.1111, y: 0, z: -64.6956}
+  m_LocalScale: {x: 9.318401, y: 5, z: 6.7216797}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -5901,7 +5903,7 @@ GameObject:
   - component: {fileID: 1741927879}
   m_Layer: 0
   m_Name: box1 (1)
-  m_TagString: Ball
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5998,7 +6000,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741927872}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d8e8c50126a21e49a1fb729c1d9bff6, type: 3}
   m_Name: 
@@ -6667,6 +6669,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objNum: 1
   num: 1
+  p: {fileID: 0}
 --- !u!65 &2008051234
 BoxCollider:
   m_ObjectHideFlags: 0
